@@ -6,14 +6,13 @@
 typedef int two_dpi;
 enum selection { DOUBLE_NUMBER = 1, REVERSE_DIGITS, RAISE_TO_POWER, SUM_DIGITS, RAISE_FIRST_TO_SECOND};
 
+// Function to generate a random two-digit positive integer
 int random() {
-
     return rand() % 90 + 10;
-    // Generate a random two-digit positive integer
 }
 
+// Function to check if a number is prime
 bool is_prime(two_dpi num) {
-
     if (num < 2)
         return false;
 
@@ -24,6 +23,7 @@ bool is_prime(two_dpi num) {
     return true;
 }
 
+// Function to double the number and add 10 if it's less than 10
 void double_number(two_dpi & num) {
     num *= 2;
     if (num < 10) {
@@ -31,6 +31,7 @@ void double_number(two_dpi & num) {
     }
 }
 
+// Function to reverse the digits of the number and add 10 if it's less than 10
 void reverse_digits(two_dpi & num) {
     int reverse_num = 0;
     int digit;
@@ -45,6 +46,7 @@ void reverse_digits(two_dpi & num) {
     }
 }
 
+// Function to raise the number to the specified exponent and add 10 if it's less than 10
 void raise_power(two_dpi & num) {
     int exponent;
     std::cout << "Enter the exponent (2, 3, or 4): ";
@@ -55,6 +57,7 @@ void raise_power(two_dpi & num) {
     }
 }
 
+// Function to sum the digits of the number and add 10 if it's less than 10
 void sum_digits(two_dpi & num) {
     int sum = 0;
     int digit;
@@ -69,6 +72,7 @@ void sum_digits(two_dpi & num) {
     }
 }
 
+// Function to raise the first digit to the power of the second digit and add 10 if it's less than 10
 void raise_1st_to_2nd(two_dpi & num) {
     if (num >= 10 && num <= 99) {
         int first_digit = num / 10;
@@ -82,6 +86,7 @@ void raise_1st_to_2nd(two_dpi & num) {
     }
 }
 
+// Function to raise the first two digits to the power of the last digit if the last digit is less than or equal to 4
 void raise_1st2_to_last(two_dpi & num) {
     if (num >= 100 && num <= 999) {
         int first_two_digits = num / 10;
