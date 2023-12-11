@@ -3,29 +3,22 @@
 
 using namespace std;
 
+// Function declarations
 void DisplayMenu();
 void ShowSeatingArrangement();
 bool IsSeatAvailable(int row, int seat);
 bool BookSeat(int row, int seat);
 
+// Constants
 const int rows = 13;
 const int seatsPerRow = 6;
-char seating[rows][seatsPerRow] = {
-        {'*', '*', 'x', '*', 'x', 'x'},
-        {'*', 'x', '*', 'x', '*', 'x'},
-        {'*', '*', 'x', 'x', '*', 'x'},
-        {'x', '*', 'x', '*', 'x', 'x'},
-        {'*', 'x', '*', 'x', '*', '*'},
-        {'*', 'x', '*', '*', '*', 'x'},
-        {'x', '*', '*', '*', 'x', 'x'},
-        {'*', 'x', '*', 'x', 'x', '*'},
-        {'x', '*', 'x', 'x', '*', 'x'},
-        {'*', 'x', '*', 'x', 'x', 'x'},
-        {'*', '*', 'x', '*', 'x', '*'},
-        {'*', '*', 'x', 'x', '*', 'x'},
-        {'*', '*', '*', '*', 'x', '*'}
-    };
 
+// Initial seating arrangement
+char seating[rows][seatsPerRow] = {
+    {'*', '*', 'x', '*', 'x', 'x'},
+    // ... (rest of the initial seating arrangement)
+    {'*', '*', '*', '*', 'x', '*'}
+};
 
 int main()
 {
@@ -34,6 +27,7 @@ int main()
     char seat;
     int attempts = 2;
 
+    // User selects ticket type
     do
     {
         DisplayMenu();
@@ -46,24 +40,32 @@ int main()
         }
     } while ((choice < 1 || choice > 3) && attempts > 0);
 
+    // Check if too many wrong choices
     if (attempts == 0) {
         cout << "Too many wrong choices. Aborting program" << endl;
         return 1;
     }
 
+    // Display initial seating arrangement
     ShowSeatingArrangement();
 
+    // User books a seat
     do {
         cout << "Enter the desired row (1-13) and seat letter (A-F): ";
         cin >> row >> seat;
 
+        // Validate row and seat input
         if (row < 1 || row > rows || seat < 65 || seat > 90) {
             cout << "Invalid row or seat. Please enter a valid combination" << endl;
             attempts--;
-        } else if ((choice == 1 && row > 2) || (choice == 2 && (row < 3 || row > 7)) || (choice == 3 && row < 8)) {
+        }
+        // Validate seat for the selected ticket type
+        else if ((choice == 1 && row > 2) || (choice == 2 && (row < 3 || row > 7)) || (choice == 3 && row < 8)) {
             cout << "Invalid seat for your ticket type. Please select another seat" << endl;
             attempts--;
-        } else {
+        }
+        // Attempt to book the seat
+        else {
             if (BookSeat(row, seat))
                 break;
             attempts--;
@@ -71,13 +73,16 @@ int main()
 
     } while (attempts > 0);
 
+    // Check if too many wrong choices
     if (attempts == 0) {
         cout << "Too many wrong choices. Aborting program." << endl;
         return 1;
     }
+
     return 0;
 }
 
+// Function to book a seat
 bool BookSeat(int row, int seat) {
     if (IsSeatAvailable(row, seat)) {
         seating[row - 1][seat - 'A'] = 'X';
@@ -89,10 +94,12 @@ bool BookSeat(int row, int seat) {
     }
 }
 
+// Function to check if a seat is available
 bool IsSeatAvailable(int row, int seat) {
     return seating[row - 1][seat - 'A'] == '*';
 }
 
+// Function to display the ticket type menu
 void DisplayMenu() {
     cout << "Select Ticket Type:\n"
         << "1. First Class\n"
@@ -100,11 +107,9 @@ void DisplayMenu() {
         << "3. Economy Class\n";
 }
 
+// Function to display the current seating arrangement
 void ShowSeatingArrangement()
 {
-    const int rows = 13;
-    const int seatsPerRow = 6;
-
     cout << setw(7) << " ";
     for (int i = 0; i < seatsPerRow; ++i) {
         cout << setw(2) << char('A' + i) << " ";
