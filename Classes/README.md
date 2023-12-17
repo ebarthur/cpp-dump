@@ -24,7 +24,7 @@ number, retrieve the balance, deposit and withdraw money, and print
 account information. Add appropriate constructors.
 - b. Every bank offers a checking account. Derive the class
 checkingAccount from the class bankAccount (designed in part
-- (a)). This class inherits members to store the account number and
+(a)). This class inherits members to store the account number and
 the balance from the base class. A customer with a checking
 account typically receives interest, maintains a minimum balance, and pays service charges if the balance falls below the minimum
 balance. Add member variables to store this additional information. In addition to the operations inherited from the base class, this class
