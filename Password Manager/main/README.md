@@ -40,4 +40,3 @@ The program provides a simple menu with options to perform various actions:
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
 
-Feel free to copy and paste this markdown into your README.md file. Adjust the content as needed for your specific project.
