@@ -1,6 +1,6 @@
 # C++ Class Challenges and Practice Repository
 
-Welcome to the C++ Class Challenges and Practice repository! This repository is designed to be a central hub for challenges and practice work related to C++ programming. Whether you're a beginner looking to enhance your C++ skills or an experienced programmer wanting to reinforce your knowledge, you've come to the right place.
+Welcome to the C++ Class Challenges and Practice repository! 
 
 ## Table of Contents
 - [Getting Started](#getting-started)
