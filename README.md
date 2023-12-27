@@ -15,7 +15,7 @@ To get started with the challenges and practice exercises, follow these simple s
 
 1. **Clone the Repository:**
    ```bash
-   git clone git@github.com:ebarthur/cpp-exercises.git
+   git clone git@github.com:ebarthur/cpp-dump.git
    ```
 
 2. **Explore Challenges:**
