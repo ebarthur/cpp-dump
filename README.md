@@ -1,6 +1,6 @@
 # C++ Class Challenges and Practice Repository
 
-Welcome to the C++ Class Challenges and Practice repository! 
+Welcome to my C++ Class Challenges and Practice repository! 
 
 ## Table of Contents
 - [Getting Started](#getting-started)
